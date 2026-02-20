@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+         <meta charset="utf-8">
+         <title>portfolio</title>
+         <link rel="stylesheet" href="style.css">
+         <script src="script.js" defer></script>
+    </head>
+    <body>
+        <nav class="navbar fixed">
+            <ul>
+                <li><a href="#home">Главная</a></li>
+                <li><a href="#skills">Навыки</a></li>
+                <li><a href="#education">Образование</a></li>
+                <li><a href="#achievements">Достижения</a></li>
+                <li><a href="#projects">Проекты</a></li>
+                <li><a href="#contacts">Контакты</a></li>
+            </ul>
+        </nav>
+    
+        <section id="home" class="hero">
+            <h1>Привет, я Рахат</h1>
+            <p>Я студент, изучаю программирование.</p>
+            <p>Люблю спорт и отдых.</p>
+            <p>Стремлюсь стать frontend-разработчиком.</p>
+            <img src="avatar.jpg" width="200">
+            <div class="roles animated">Frontend разработчик | UI дизайнер | Студент</div>
+            <button onclick="document.getElementById('contacts').scrollIntoView()">Связаться со мной</button>
+        </section>
+
+        <section id="skills">
+
+            <h2>Навыки</h2>
+            <h3>Hard Skills</h3>
+            <div>Python: <progress value="80" max="100">70%</progress></div>
+            <div>JavaScript: <progress value="40" max="100">10%</progress></div>
+            <div>Java: <progress value="20" max="100">60%</progress></div>
+            <div>C++: <progress value="40" max="100">40%</progress></div>
+            <ul>
+                <li>Git</li>
+                <li>MySQL</li>
+                <li>Linux</li>
+            </ul>
+
+            <h3>Soft Skills</h3>
+            <ul>
+                <li>Командная работа</li>
+                <li>Критическое мышление</li>
+                <li>Коммуникабельность</li>
+            </ul>
+            <h3>Languages</h3>
+            <ul>
+                <li>Английский (Intermediate)</li>
+                <li>Казахский (Native)</li>
+                <li>Русский (Native)</li>
+            </ul>
+
+            <h3>Другое</h3>
+            <ul>
+                <li>Объектно-ориентированное программирование</li>
+                <li>Паттерны проектирования</li>
+                <li>Разработка настольных приложений (QT, wxWidgets)</li>
+                <li>Разработка Android-приложений</li>
+                <li>HTTP</li>
+            </ul>
+        </section>
+
+        <section id="education" class="timeline">
+            <h2>Образование</h2>
+            <div>Университет: ToU, 2026-настоящее, Бакалавр. 3курс, Факультет: Computer Science</div>
+            <div>Школа(окончено): СОШ№29</div>
+        </section>
+
+        <section id="achievements">
+            <h2>Достижения</h2>
+            <div>Сертификация Coursera: 2024, Python.</div>
+            <div>Олимпиада: 2020, Программирование.</div>
+        </section>
+
+        <section id="projects">
+            <h2>Проекты</h2>
+            <div class="project-card">
+                <img src="skrin.png" alt="Проект 1" width="400" height="200">
+                <h3>Маркетплейс</h3>
+                <p>Я создал сайт</p>
+                <p>Технологии: HTML, CSS.</p>
+                <a href="https://github.com/Rahat7182/portfolio/tree/main/test">GitHub</a>
+                <a href="demo1">Live Demo</a>
+            </div>
+
+            <section id="contacts">
+                <h2>Контакты</h2>
+                <form id="contact-form">
+                    <input type="text" placeholder="Имя" required>
+                    <input type="email" placeholder="Email" required>
+                    <textarea placeholder="Сообщение" required></textarea>
+                    <button type="submit">Отправить</button>
+                </form>
+                <p>Email: student@gmail.com</p>
+                <p>Локация: Павлодар</p>
+                <a href="https://github.com/Rahat7182/portfolio"><img src="git.png" alt="GitHub" width="20" height="20"></a>
+            </section>
+
+            <footer>© 2026 Рахат</footer>
+
+    </body>
+</html>
