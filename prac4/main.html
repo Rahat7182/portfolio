@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <script src="rpg-tasks.js" defer></script>
+</head>
+<body>
+    <nav class="navbar fixed">
+        <ul>
+            <li><a href="#home">Главная</a></li>
+            <li><a href="#skills">Навыки</a></li>
+            <li><a href="#education">Образование</a></li>
+            <li><a href="#achievements">Достижения</a></li>
+            <li><a href="#projects">Проекты</a></li>
+            <li><a href="#rpg-tasks">RPG Планировщик</a></li>
+            <li class="dropdown">
+                <a href="#minigames">Мини-игры</a>
+                <div class="dropdown-content">
+                    <a onclick="loadGame('clicker')">Кликер</a>
+                    <a onclick="loadGame('adventure')">Генератор приключений</a>
+                    <a onclick="loadGame('guess')">Угадай число</a>
+                    <a onclick="loadGame('reaction')">Скорость реакции</a>
+                    <a onclick="loadGame('tictactoe')">Крестики-нолики</a>
+                    <a onclick="loadGame('maze')">Лабиринт</a>
+                </div>
+            </li>
+            <li><a href="#contacts">Контакты</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="hero">
+        <h1>Привет, я Рахат</h1>
+        <p>Я студент, изучаю программирование.</p>
+        <p>Люблю спорт и отдых.</p>
+        <p>Стремлюсь стать frontend-разработчиком.</p>
+        <img src="avatar.jpg" alt="Аватар" width="200">
+        <div class="roles animated">Frontend разработчик | UI дизайнер | Студент</div>
+        <button onclick="document.getElementById('contacts').scrollIntoView()">Связаться со мной</button>
+    </section>
+
+    <section id="skills">
+        <h2>Навыки</h2>
+        <h3>Hard Skills</h3>
+        <div>Python: <progress value="80" max="100">80%</progress></div>
+        <div>JavaScript: <progress value="40" max="100">40%</progress></div>
+        <div>Java: <progress value="20" max="100">20%</progress></div>
+        <div>C++: <progress value="40" max="100">40%</progress></div>
+        <ul>
+            <li>Git</li>
+            <li>MySQL</li>
+            <li>Linux</li>
+        </ul>
+
+        <h3>Soft Skills</h3>
+        <ul>
+            <li>Командная работа</li>
+            <li>Критическое мышление</li>
+            <li>Коммуникабельность</li>
+        </ul>
+        <h3>Languages</h3>
+        <ul>
+            <li>Английский (Intermediate)</li>
+            <li>Казахский (Native)</li>
+            <li>Русский (Native)</li>
+        </ul>
+
+        <h3>Другое</h3>
+        <ul>
+            <li>Объектно-ориентированное программирование</li>
+            <li>Паттерны проектирования</li>
+            <li>Разработка настольных приложений (QT, wxWidgets)</li>
+            <li>Разработка Android-приложений</li>
+            <li>HTTP</li>
+        </ul>
+    </section>
+
+    <section id="education" class="timeline">
+        <h2>Образование</h2>
+        <div>Университет: ToU, 2026-настоящее, Бакалавр. 3курс, Факультет: Computer Science</div>
+        <div>Школа(окончено): СОШ№29</div>
+    </section>
+
+    <section id="achievements">
+        <h2>Достижения</h2>
+        <div>Сертификация Coursera: 2024, Python.</div>
+        <div>Олимпиада: 2020, Программирование.</div>
+    </section>
+
+    <section id="projects">
+        <h2>Проекты</h2>
+        <div class="project-card">
+            <img src="skrin.png" alt="Проект 1" width="400" height="200">
+            <h3>Маркетплейс</h3>
+            <p>Я создал сайт</p>
+            <p>Технологии: HTML, CSS.</p>
+            <a href="https://github.com/Rahat7182/portfolio/tree/main/test">GitHub</a>
+            <a href="demo1">Live Demo</a>
+        </div>
+    </section>
+
+    <section id="minigames">
+        <h2>Мини-игры</h2>
+        <div id="game-container"></div>
+    </section>
+
+    <section id="rpg-tasks" class="rpg-section">
+        <div class="rpg-container">
+            <h1 class="rpg-title">✦ RPG Task Manager ✦</h1>
+            <div id="character-card" class="character-card">
+                <div class="avatar-placeholder">🧙</div>
+                <h2 id="char-name">Герой</h2>
+                <div class="level-info">
+                    <span>Уровень: <strong id="level">1</strong></span>
+                    <span id="xp-text">0 / 100 XP</span>
+                </div>
+                <progress id="xp-bar" value="0" max="100"></progress>
+            </div>
+            <div class="task-form">
+                <h3>Новая задача</h3>
+                <input type="text" id="task-title" placeholder="Название задачи" required>
+                <textarea id="task-desc" placeholder="Описание (необязательно)"></textarea>
+                <div class="difficulty-select">
+                    <label><input type="radio" name="difficulty" value="easy" checked> Лёгкая (+10 XP)</label>
+                    <label><input type="radio" name="difficulty" value="medium"> Средняя (+25 XP)</label>
+                    <label><input type="radio" name="difficulty" value="hard"> Сложная (+50 XP)</label>
+                    <label><input type="radio" name="difficulty" value="epic"> Эпическая (+100 XP)</label>
+                </div>
+                <button id="add-task-btn">Добавить задачу</button>
+            </div>
+            <div class="tasks-section">
+                <h3>Активные квесты</h3>
+                <ul id="active-tasks"></ul>
+            </div>
+            <div class="tasks-section">
+                <h3>Выполненные квесты</h3>
+                <ul id="completed-tasks"></ul>
+            </div>
+            <div class="stats-section">
+                <h3>Хроника героя</h3>
+                <p>Выполнено задач: <span id="stats-completed">0</span></p>
+                <p>Заработано опыта: <span id="stats-xp">0</span></p>
+                <p>Создан: <span id="stats-created">—</span></p>
+                <button id="reset-progress" class="danger-btn">Сбросить прогресс</button>
+            </div>
+            <div id="notification" class="notification hidden"></div>
+        </div>
+    </section>
+
+    <section id="contacts">
+        <h2>Контакты</h2>
+        <form id="contact-form">
+            <input type="text" placeholder="Имя" required>
+            <input type="email" placeholder="Email" required>
+            <textarea placeholder="Сообщение" required></textarea>
+            <button type="submit">Отправить</button>
+        </form>
+        <p>Email: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e99a9d9c8d8c879da98e84888085c78a8684">[email&#160;protected]</a></p>
+        <p>Локация: Павлодар</p>
+        <a href="https://github.com/Rahat7182/portfolio"><img src="git.png" alt="GitHub" width="20" height="20"></a>
+    </section>
+
+    <footer>© 2026 Рахат</footer>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>
+
